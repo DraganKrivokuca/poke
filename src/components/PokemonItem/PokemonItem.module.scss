@@ -1,0 +1,25 @@
+.pokemonWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .abilities {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    .abilitiesName {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .abilitiesList {
+      list-style-type: none;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
