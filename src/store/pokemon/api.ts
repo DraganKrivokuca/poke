@@ -12,7 +12,14 @@ const getPokemonDetails = async (name: string) => {
   return data;
 };
 
+const getPokemonAbilitiesLog = async (url: string) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
+
 export const pokemonAPI = {
   getPokemons,
   getPokemonDetails,
+  getPokemonAbilitiesLog,
 };

@@ -22,3 +22,14 @@ export const selectPokemoDetailed = createSelector(
     }
   }
 );
+
+export const selectPokemnAbilitiesLog = createSelector(
+  pokemonSelector,
+  (slicedState: any) => {
+    try {
+      return slicedState.abilitiesLog;
+    } catch (e) {
+      return {} as any;
+    }
+  }
+);

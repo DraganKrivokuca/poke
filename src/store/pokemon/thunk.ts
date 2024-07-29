@@ -24,3 +24,15 @@ export const getPokemonDetails = createAsyncThunk(
     }
   }
 );
+
+export const getPokemonAbilitiesLog = createAsyncThunk(
+  "pokemons/getPokemonAbilitiesLog",
+  async (payload: string) => {
+    try {
+      const response = await pokemonAPI.getPokemonAbilitiesLog(payload);
+      return response;
+    } catch (e) {
+      console.error("from thunk", e);
+    }
+  }
+);

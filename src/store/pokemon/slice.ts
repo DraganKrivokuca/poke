@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import isEqual from "react-fast-compare";
 
-import { getPokemonDetails, getPokemons } from "./thunk";
+import {
+  getPokemonAbilitiesLog,
+  getPokemonDetails,
+  getPokemons,
+} from "./thunk";
 
 const pokemonSlice = createSlice({
   name: "pokemons",
@@ -11,6 +15,7 @@ const pokemonSlice = createSlice({
     loading: false,
     selectedPokemon: {},
     pokemonDetails: {},
+    abilitiesLog: {},
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -34,6 +39,9 @@ const pokemonSlice = createSlice({
     builder.addCase(getPokemonDetails.fulfilled, (state, action) => {
       state.loading = false;
       state.pokemonDetails = action.payload;
+    });
+    builder.addCase(getPokemonAbilitiesLog.fulfilled, (state, action) => {
+      state.abilitiesLog = action.payload;
     });
   },
 });
